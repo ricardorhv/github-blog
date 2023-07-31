@@ -9,8 +9,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${props => props.theme['base-background']};
-    color: ${props => props.theme["base-text"]};
     line-height: 1.6;
+  }
+  
+  a:visited, a:link, body {
+    color: ${props => props.theme["base-text"]};
   }
 
   body, textarea, button, input {
