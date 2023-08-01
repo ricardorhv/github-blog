@@ -3,35 +3,63 @@ import ProfileImage from '../../../../assets/profile.jpeg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUpRightFromSquare, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+interface UserProps {
+  avatar_url: string;
+  name: string;
+  login: string; 
+  bio: string;
+  followers: number;
+  company?: string;
+}
 
 export function Header() {
+  const [user, setUser] = useState<UserProps>({} as UserProps)
+
+  async function fetchUserData() {
+    const response = await axios.get('https://api.github.com/users/ricardorhv')
+    const { name, avatar_url, bio, company, followers, login } = response.data
+    setUser({
+      name,
+      avatar_url, 
+      bio,
+      company, 
+      followers,  
+      login
+    })
+  }
+
+  useEffect(() => {
+    fetchUserData()
+  }, [])
+  
   return (
     <HeaderContainer>
-      <img src={ProfileImage} alt="Profile Image"/>
+      <img src={user.avatar_url} alt="Profile Image"/>
       <section>
         <HeaderTitle>
-          <h3>Ricardo</h3>
-          <a href="https://github.com/ricardorhv" target="_blank">
+          <h3>{user.name}</h3>
+          <a href={`https://github.com/${user.login}`} target="_blank">
             Github
             <FontAwesomeIcon icon={faUpRightFromSquare}/>
           </a>
         </HeaderTitle>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iure distinctio possimus officiis vero animi, nam laudantium totam ratione sint nemo, voluptatum quis adipisci sunt, itaque blanditiis expedita beatae nostrum.
-        </p>
+        <p>{user.bio}</p>
         <HeaderInfo>
           <div>
             <FontAwesomeIcon icon={faGithub}/>
-            <span>ricardorhv</span>
+            <span>{user.login}</span>
           </div>
-          <div>
+          {user.company && (<div>
             <FontAwesomeIcon icon={faBuilding}/>
-            <span>Rocketseat</span>
-          </div>
+            <span>{user.company}</span>
+          </div>)}
           <div>
             <FontAwesomeIcon icon={faUserGroup}/>
-            <span>30 seguidores</span>
+            <span>{user.followers} seguidores</span>
           </div>
         </HeaderInfo>
       </section>
