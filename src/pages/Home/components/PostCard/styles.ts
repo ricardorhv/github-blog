@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PostContainer = styled.a`
+export const PostCardContainer = styled.a`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -32,12 +32,16 @@ export const PostContainer = styled.a`
     }
   }
 
+  div ~ *:not(div + *) {
+    display: none;
+  }
+
   p {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    white-space: pre-wrap; 
+    white-space: pre-wrap;
   }
 
   &:hover {

@@ -1,25 +1,34 @@
+import { useContext } from "react";
 import { Header } from "./components/Header";
-import { Post } from "./components/Post";
+import { PostCard } from "./components/PostCard";
 import { PostsSection, SearchSection } from "./styles";
+import { PostContext } from "../../context/PostContext";
 
 export function Home() {
+  const { posts } = useContext(PostContext)
+  const quantityOfPosts = posts.length
+
   return (
     <div>
       <Header/>
       <SearchSection>
         <div>
           <h5>Publicações</h5>
-          <span>6 publicações</span>
+          <span>{quantityOfPosts} publicações</span>
         </div>
         <input type="text" placeholder="Buscar conteúdo"/>
       </SearchSection>
       <PostsSection>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {
+          posts.map(post => (
+            <PostCard 
+              title={post.title}
+              createdAt={post.createdAt}
+              description={post.description}
+              key={post.title}
+            />
+          ))
+        }
       </PostsSection>
     </div>
   )

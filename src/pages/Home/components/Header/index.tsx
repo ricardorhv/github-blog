@@ -1,5 +1,4 @@
 import { HeaderContainer, HeaderInfo, HeaderTitle } from "./styles";
-import ProfileImage from '../../../../assets/profile.jpeg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUpRightFromSquare, faUserGroup } from "@fortawesome/free-solid-svg-icons";
