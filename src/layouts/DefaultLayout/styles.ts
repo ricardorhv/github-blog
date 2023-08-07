@@ -7,6 +7,11 @@ export const LayoutContainer = styled.div`
 `
 
 export const HeaderBackground = styled.div`
-  background: center center no-repeat url(${headerBackground});
+  background: center center/cover no-repeat url(${headerBackground});
+  width: 100%;
   height: 18.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

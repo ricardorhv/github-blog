@@ -1,9 +1,12 @@
-import { HeaderContainer, HeaderInfo, HeaderTitle } from "./styles";
+import { useEffect, useState } from "react";
+
+import { api } from "../../../../lib/axios";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUpRightFromSquare, faUserGroup } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
+import { HeaderContainer, HeaderInfo, HeaderTitle } from "./styles";
 
 interface UserProps {
   avatar_url: string;
@@ -18,7 +21,7 @@ export function Header() {
   const [user, setUser] = useState<UserProps>({} as UserProps)
 
   async function fetchUserData() {
-    const response = await axios.get('https://api.github.com/users/ricardorhv')
+    const response = await api.get('users/ricardorhv')
     const { name, avatar_url, bio, company, followers, login } = response.data
     setUser({
       name,

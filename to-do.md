@@ -1,0 +1,3 @@
+- [ ] Utilizar rotas dinâmicas com o react router dom, utilizando parâmetro para saber qual issue foi clicada
+- [ ] Para exibir todas as issues, utilizar a search API api.github.com/search/issues?q=repo:ricardorhv/github-blog
+- [ ] Para descobrir qual issue foi clicada, usar o useParams para pegar o id da issue e buscar ela pelo Issues API

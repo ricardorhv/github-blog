@@ -18,10 +18,10 @@ interface HeaderProps {
 }
 
 export function Header({ title, comments, createdAt, url, username }: HeaderProps) {
-  const postDate = formatDistanceToNow(new Date(createdAt), {
+  const postDate = createdAt ? formatDistanceToNow(new Date(createdAt), {
     locale: ptBR,
     addSuffix: true,
-  })
+  }) : ''
   const commentsText = comments > 1 ? 'comentários' : 'comentário'
 
   return (

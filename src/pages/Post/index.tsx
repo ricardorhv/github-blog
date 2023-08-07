@@ -1,27 +1,56 @@
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { PostType } from "../../context/PostContext";
-import { Header } from "./components/Header";
-import { PostContent } from "./styles";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-export function Post({ 
-  title,
-  comments,
-  createdAt,
-  username,
-  description, 
-  url
- }: PostType) {
+import { api } from "../../lib/axios";
+
+import { PostContent } from "./styles";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Header } from "./components/Header";
+
+interface PostType {
+  id: number;
+  title: string;
+  username: string;
+  createdAt: string;
+  comments: number;
+  url: string;
+  description: string;
+}
+
+export function Post() {
+  const [post, setPost] = useState<PostType>({} as PostType)
+  const { id } = useParams()
+  
+  async function fetchPost() {
+    const response = await api.get(`repos/ricardorhv/github-blog/issues/${id}`)
+    const issue = response.data
+
+    setPost({
+      title: issue.title,
+      comments: issue.comments,
+      createdAt: issue.created_at,
+      username: issue.user.login,
+      description: issue.body,
+      url: issue.html_url,
+      id: issue.number
+    })
+  }
+
+  useEffect(() => {
+    fetchPost()
+  }, [])
+  
   return (
     <div>
       <Header
-        title={title}
-        createdAt={createdAt}
-        comments={comments}
-        username={username}
-        url={url}
+        title={post.title}
+        createdAt={post.createdAt}
+        comments={post.comments}
+        username={post.username}
+        url={post.url}
       />
       <PostContent>
-        <ReactMarkdown children={description} />
+        <ReactMarkdown children={post.description} />
       </PostContent>
     </div>
   )

@@ -5,12 +5,14 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { formatDay } from "../../../../utils/formatter";
 
 interface PostCardProps {
+  id: number;
   title: string,
   createdAt: string,
   description: string,
 }
 
 export function PostCard({
+  id,
   createdAt,
   description,
   title
@@ -21,7 +23,7 @@ export function PostCard({
   })
 
   return (
-    <PostCardContainer href={`/${title}`}>
+    <PostCardContainer href={`/posts/${id}`}>
       <div>
         <h4>{title}</h4>
         <span>
