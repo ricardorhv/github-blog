@@ -6,16 +6,7 @@ import { api } from "../../lib/axios";
 import { PostContent } from "./styles";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Header } from "./components/Header";
-
-interface PostType {
-  id: number;
-  title: string;
-  username: string;
-  createdAt: string;
-  comments: number;
-  url: string;
-  description: string;
-}
+import { PostType } from "../../context/SearchPostContext";
 
 export function Post() {
   const [post, setPost] = useState<PostType>({} as PostType)

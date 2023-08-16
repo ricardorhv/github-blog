@@ -20,23 +20,6 @@ export const SearchSection = styled.section`
     font-size: 0.875rem;
     color: ${props => props.theme['base-span']};
   }
-
-  input {
-    width: 100%;
-
-    background: ${props => props.theme['base-input']};
-    color: ${props => props.theme['base-text']};
-
-    margin-top: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    border: none;
-    outline: 1px solid ${props => props.theme['base-border']};
-
-    &::placeholder {
-      color: ${props => props.theme['base-label']};
-    }
-  }
 `
 
 export const PostsSection = styled.main`

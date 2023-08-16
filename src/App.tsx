@@ -3,16 +3,16 @@ import { defaultTheme } from "./styles/themes/defaultTheme";
 import { GlobalStyle } from "./styles/global";
 import { Router } from "./Router";
 import { BrowserRouter } from "react-router-dom";
-import { PostContextProvider } from "./context/PostContext";
+import { SearchPostContextProvider } from "./context/SearchPostContext";
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <PostContextProvider>
-        <BrowserRouter>
-          <Router/>
-        </BrowserRouter>
-      </PostContextProvider>
+      <BrowserRouter>
+      <SearchPostContextProvider>
+        <Router/>
+      </SearchPostContextProvider>
+      </BrowserRouter>
       <GlobalStyle/>
     </ThemeProvider>
   )
