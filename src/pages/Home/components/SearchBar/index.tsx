@@ -4,7 +4,7 @@ import { SearchPostContext } from "../../../../context/SearchPostContext";
 
 export function SearchBar() {
   const [postName, setPostName] = useState('')
-  
+  const isPostNameEmpty = postName.length === 0
 
   const { searchForPostName, resetPostsFiltered } = useContext(SearchPostContext)
 
@@ -19,19 +19,24 @@ export function SearchBar() {
     }
   }
 
-  function handleSearchforPostName(event: React.FormEvent<HTMLFormElement>) {
+  function handleSearchForPostName(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    searchForPostName(`${postName}+repo:ricardorhv/github-blog`)
+    searchForPostName(`${postName} repo:ricardorhv/github-blog`)
   }
 
   return (
-    <SearchBarContainer onSubmit={handleSearchforPostName}>
+    <SearchBarContainer onSubmit={handleSearchForPostName}>
       <input 
         type="text" 
         placeholder="Buscar conteúdo"
         onChange={handleChangePostName}
       />
-      <button type="submit">Pesquisar</button>
+      <button 
+        type="submit"
+        disabled={isPostNameEmpty}
+      >
+        Pesquisar
+      </button>
     </SearchBarContainer>
   )
 }

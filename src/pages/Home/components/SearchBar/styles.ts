@@ -32,9 +32,14 @@ export const SearchBarContainer = styled.form`
     border: none;
     outline: none;
 
-    &:hover {
+    &:not(&:disabled):hover {
       filter: brightness(0.8);
       transition: filter 0.4s;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      filter: brightness(0.7);
     }
   }
 `

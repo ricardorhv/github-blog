@@ -10,9 +10,10 @@ import { Issues, PostType, SearchPostContext } from "../../context/SearchPostCon
 
 export function Home() {
   const [posts, setPosts] = useState<PostType[]>([])
-  const quantityOfPosts = posts.length
   const { postsFiltered } = useContext(SearchPostContext)
+
   const hasUserFilterPost = postsFiltered.length === 0 ? false : true
+  const quantityOfPosts = hasUserFilterPost ? postsFiltered.length : posts.length
 
   async function fetchPosts() {
     const response = await api.get('search/issues?q=repo:ricardorhv/github-blog')

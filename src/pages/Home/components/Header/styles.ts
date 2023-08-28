@@ -8,6 +8,11 @@ export const HeaderContainer = styled.header`
   display: flex;
   gap: 2rem;
   align-items: center;
+  justify-content: center;
+  
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 
   img {
     width: 9.25rem;

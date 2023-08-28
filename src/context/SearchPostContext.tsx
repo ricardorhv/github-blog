@@ -54,6 +54,7 @@ export function SearchPostContextProvider({ children }: SearchPostContextProps) 
         q: query,
       },
     })
+    
     posts.data.items.map(post => {
       setPostsFiltered(state => [...state, {
         title: post.title,

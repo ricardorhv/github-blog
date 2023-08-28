@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 import { api } from "../../../../lib/axios";
 
@@ -17,7 +17,7 @@ interface UserProps {
   company?: string;
 }
 
-export function Header() {
+function HeaderComponent() {
   const [user, setUser] = useState<UserProps>({} as UserProps)
 
   async function fetchUserData() {
@@ -68,3 +68,5 @@ export function Header() {
     </HeaderContainer>
   )
 }
+
+export const Header = memo(HeaderComponent)

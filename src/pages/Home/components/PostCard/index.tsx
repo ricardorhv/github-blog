@@ -3,6 +3,7 @@ import { PostCardContainer } from "./styles";
 import { ptBR } from "date-fns/locale";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { formatDay } from "../../../../utils/formatter";
+import { memo } from "react";
 
 interface PostCardProps {
   id: number;
@@ -11,7 +12,7 @@ interface PostCardProps {
   description: string,
 }
 
-export function PostCard({
+function PostCardComponent({
   id,
   createdAt,
   description,
@@ -34,3 +35,5 @@ export function PostCard({
     </PostCardContainer>
   )
 }
+
+export const PostCard = memo(PostCardComponent)

@@ -4,6 +4,10 @@ import headerBackground from '../../assets/header-background.svg'
 export const LayoutContainer = styled.div`
   max-width: 54rem;
   margin: -5.5rem auto 2rem;
+  
+  @media (max-width: 900px) {
+    padding: 0 1rem;
+  }
 `
 
 export const HeaderBackground = styled.div`
