@@ -2,32 +2,17 @@
   <img src="./.github/logo.svg">
 </p>
 
-<hr>
-<h1 align="center"> ⚠️ IN PROGRESS ⚠️ </h1>
-
 ## Application developed to train my knowledge about performance and API in React
 
 <img src="./.github/capa.png">
 
-<!-- ---
+---
 
 ## 🎥 Preview
 
-### A little about the project 💻
+### How project works 💻
 
 <img src='./github/tour.gif'/>
-
-<br>
-
----
-
-## 🚀 I went beyond the challenge
-
-I did more than was requested to me
-
-<br>
-
-- ✔️ I did `something`
 
 <br>
 
@@ -37,7 +22,8 @@ I did more than was requested to me
 
 All the things that I learned and practiced with this project
 
-- I learn `something` to do something
+- I learn `performance` to improve the website
+- I learn `how to handle with API` in React
 
 <br>
 
@@ -47,8 +33,14 @@ All the things that I learned and practiced with this project
 
 This project was developed using de following technologies:
 
-- [Tech](link)
-- [Tech](link)
+- [React](https://react.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Fontawesome Icons](https://fontawesome.com/)
+- [Axios](https://axios-http.com/ptbr/)
+- [Date fns](https://date-fns.org/)
+- [React markdown](https://remarkjs.github.io/react-markdown/)
+- [Styled components](https://styled-components.com/)
+- [React router dom](https://reactrouter.com/en/main)
 
 <br>
 
@@ -58,7 +50,7 @@ This project was developed using de following technologies:
 
 You can view the project layout through the links below:
 
-- [Layout](https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate)
+- [Layout](https://www.figma.com/community/file/1138814951106121051)
 
 Remembering that you need to have a [Figma](http://figma.com/) account to access it.
 
@@ -66,4 +58,4 @@ Remembering that you need to have a [Figma](http://figma.com/) account to access
 
 ---
 
-Developed by [ricardorhv](https://github.com/ricardorhv) 👋 -->
+Developed by [ricardorhv](https://github.com/ricardorhv) 👋
