@@ -10,9 +10,17 @@
 
 ## 🎥 Preview
 
-### How project works 💻
+### Listing and searching posts 💻
 
-<img src='./.github/tour.gif'/>
+<img src='./.github/listing-and-searching.gif'/>
+
+<br>
+
+---
+
+### Showing the content of the post 💻
+
+<img src='./.github/docs.gif'/>
 
 <br>
 
