@@ -12,7 +12,7 @@
 
 ### How project works 💻
 
-<img src='./github/tour.gif'/>
+<img src='./.github/tour.gif'/>
 
 <br>
 
